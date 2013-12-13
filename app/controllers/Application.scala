@@ -24,14 +24,28 @@ object Application extends Controller {
   }
 
   def everything(str: String) = Action {
-    val tokens = seqAsJavaList(str.split(" "))
-    val haiku = Global.everything(tokens)
-    Ok(Json.toJson(haiku).toString).withHeaders(PRAGMA -> "no-cache")
+    try {
+      val tokens = seqAsJavaList(str.split(" "))
+      val haiku = Global.everything(tokens)
+      Ok(Json.toJson(haiku).toString).withHeaders(PRAGMA -> "no-cache")
+    } catch {
+      case _ => {
+        println("Error on " + str)
+        NotFound("")
+      }
+    }
   }
 
   def everythingV2(str: String) = Action {
-    val tokens = seqAsJavaList(str.split(" "))
-    val haiku = Global.everythingV2(tokens)
-    Ok(Json.toJson(haiku).toString).withHeaders(PRAGMA -> "no-cache")
+    try {
+      val tokens = seqAsJavaList(str.split(" "))
+      val haiku = Global.everythingV2(tokens)
+      Ok(Json.toJson(haiku).toString).withHeaders(PRAGMA -> "no-cache")
+    } catch {
+      case _ => {
+        println("Error on " + str)
+        NotFound("")
+      }
+    }
   }
 }
