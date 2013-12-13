@@ -21,6 +21,13 @@ angular.module('app', [])
       });
     };
 
+    service.everythingV2 = function(seed) {
+      return $http.get('/everythingV2/' + seed + '?r=' + i++).then(function(result) {
+        return result.data;
+      });
+    };
+
+
     return service;
   })
   .directive('haikus', function() {
@@ -37,6 +44,7 @@ angular.module('app', [])
     $scope.naiveHaikus = [];
     $scope.markovHaikus = [];
     $scope.everythingHaikus = [];
+    $scope.everythingV2Haikus = [];
     $scope.everythingInput = '';
 
     var cleaner = function(result) {
@@ -61,6 +69,7 @@ angular.module('app', [])
     var naiveSpammer = spammer(generatorService.naive);
     var markovSpammer = spammer(generatorService.markov);
     var everythingSpammer = spammer(generatorService.everything);
+    var everythingV2Spammer = spammer(generatorService.everythingV2);
 
     $scope.naive = function() {
       naiveSpammer().then(function(result) {
@@ -77,6 +86,12 @@ angular.module('app', [])
     $scope.everything = function(seed) {
       everythingSpammer(seed).then(function(result) {
         $scope.everythingHaikus = result;
+      });
+    };
+
+    $scope.everythingV2 = function(seed) {
+      everythingV2Spammer(seed).then(function(result) {
+        $scope.everythingV2Haikus = result;
       });
     };
   })

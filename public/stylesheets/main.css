@@ -8,8 +8,10 @@ body p {
 
 .generator {
 	margin: 30px auto;
+	padding: 0 20px 60px 20px;
 	width: 600px;
 	text-align: center;
+	border-bottom: 1px #bbb solid;
 }
 
 .generator > button, .generator > .input-group {

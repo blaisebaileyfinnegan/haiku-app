@@ -48,7 +48,18 @@
 				<span class="input-group-btn">
 					<button class="btn btn-success" type="button" ng-click="everything(everythingInput)">Generate!</button>
 				</span>
-				<input type="text" class="form-control" placeholder="Type in a seed word" ng-model="everythingInput">
+				<input type="text" class="form-control" placeholder="Type seed word(s), delimited by spaces" ng-model="everythingInput">
+			</div>
+		</div>
+		<div class="generator">
+			<p><strong>Giant generator Version 2.0... now with an additional sentiment model and better choice
+			of sentence patterns</strong></p>
+			<haikus haiku-data="everythingV2Haikus"></haikus>
+			<div class="input-group" style="margin-left:93px">
+				<span class="input-group-btn">
+					<button class="btn btn-success" type="button" ng-click="everythingV2(everythingV2Input)">Generate!</button>
+				</span>
+				<input type="text" class="form-control" placeholder="Type seed word(s), delimited by spaces" ng-model="everythingV2Input">
 			</div>
 		</div>
 	</div>
