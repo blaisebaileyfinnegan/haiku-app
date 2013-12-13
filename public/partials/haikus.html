@@ -1,0 +1,7 @@
+<div class="haikus">
+	<div ng-repeat="haiku in haikus" class="haiku">
+		<div ng-repeat="line in haiku track by $index">
+			{{ line }}
+		</div>
+	</div>
+</div>

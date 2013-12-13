@@ -1,0 +1,43 @@
+body p {
+	font-size: 20px;
+}
+
+.container {
+	margin-top: 12px;
+}
+
+.generator {
+	margin: 30px auto;
+	width: 600px;
+	text-align: center;
+}
+
+.generator > button, .generator > .input-group {
+	text-align: center;
+	width: 70%;
+}
+
+.poem {
+	margin-bottom: 10px;
+}
+
+.credits {
+	top: 15px;
+	right: 40px;
+	position: absolute;
+}
+
+.credits ul {
+	color: #ccc;
+	font-size: 18px;
+	list-style-type: none;
+}
+
+
+.haikus {
+	margin: 24px 0;
+}
+
+.haiku {
+	margin-bottom: 12px;
+}
